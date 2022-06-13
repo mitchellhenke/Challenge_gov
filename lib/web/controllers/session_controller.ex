@@ -95,6 +95,7 @@ defmodule Web.SessionController do
 
   @empty_jwt_token ""
   def delete(conn = %{assigns: %{current_user: user}}, _params) do
+    IO.inspect("SessionController.delete")
     Accounts.update_active_session(user, false, @empty_jwt_token)
     log_session_duration(conn, user)
 
@@ -147,6 +148,7 @@ defmodule Web.SessionController do
   end
 
   def logout_user(conn = %{assigns: %{current_user: user}}) do
+    IO.inspect("SessionController.logout_user")
     Accounts.update_active_session(user, false, @empty_jwt_token)
 
     log_session_duration(conn, user)
@@ -155,7 +157,7 @@ defmodule Web.SessionController do
     |> clear_session()
     |> configure_session([:renew])
     |> assign(:session_timeout, true)
-    |> redirect(to: Routes.session_path(conn, :new))
+    |> redirect(external: LoginGov.logout_uri(user.jwt_token))
   end
 
   defp now do
