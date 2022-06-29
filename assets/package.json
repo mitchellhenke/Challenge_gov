@@ -25,7 +25,7 @@
     "moment": "^2.27.0",
     "moment-timezone": "^0.5.31",
     "node-quill-converter": "^0.3.3",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.1",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
     "phoenix_live_view": "file:../deps/phoenix_live_view",
@@ -42,8 +42,7 @@
     "select2": "^4.0.13",
     "string-strip-html": "^8.3.0",
     "url-loader": "^1.1.2",
-    "uswds": "2.8.0",
-    "yarn": "^1.13.0"
+    "uswds": "2.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
