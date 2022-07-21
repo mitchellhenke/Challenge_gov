@@ -123,9 +123,9 @@ defmodule ChallengeGov.LoginGov do
     |> URI.to_string()
   end
 
-  def process_request_body(body) do
-    Poison.encode!(body)
-  end
+  # def process_request_body(body) do
+  #   Poison.encode!(body)
+  # end
 
   def process_response_body(body) do
     Poison.decode!(body)
